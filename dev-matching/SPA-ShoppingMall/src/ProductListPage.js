@@ -1,4 +1,5 @@
-import Api from "./src/Api.js";
+import Api from "./Api.js";
+import { getPrice } from "./util.js";
 
 export default function ProductListPage({ $app }) {
     this.$target = document.createElement("div");
@@ -23,7 +24,7 @@ export default function ProductListPage({ $app }) {
                     <img src = "${product.imageUrl}"/>
                     <div class ="Product__info">
                         <div>${product.name}</div>
-                        <div>${product.price}원~</div>
+                        <div>${getPrice(product.price)}원~</div>
                     </div>
                 </li>
             `

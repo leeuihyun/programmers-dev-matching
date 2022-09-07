@@ -1,9 +1,9 @@
-export default function CardPage({ $target }) {
-    const $page = document.createElement("div");
-    $page.className = "CartPage";
-    $page.innerHTML = "<h1>장바구니</h1>";
+export default function CardPage({ $app }) {
+    this.$target = document.createElement("div");
+    this.$target.className = "CartPage";
+    this.$target.innerHTML = "<h1>장바구니</h1>";
 
     this.render = () => {
-        $target.appendChild($page);
+        $app.appendChild(this.$target);
     };
 }

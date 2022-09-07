@@ -2,18 +2,18 @@ import ProductListPage from "./ProductListPage.js";
 import CartPage from "./CartPage.js";
 import ProductDetailPage from "./ProductDetailPage.js";
 
-export default function App({ $target }) {
+export default function App({ $app }) {
     this.route = () => {
         const { pathname } = location;
         console.log(pathname);
-        $target.innerHTML = "";
+        $app.innerHTML = "";
         if (pathname === "/web/") {
-            new ProductListPage({ $target }).render();
+            new ProductListPage({ $app }).render();
         } else if (pathname.indexOf("/products/") === 0) {
             const [, , productId] = pathname.split("/");
-            new ProductDetailPage({ $target, productId }).render();
+            new ProductDetailPage({ $app, productId }).render();
         } else if (pathname === "/web/cart") {
-            new CartPage({ $target }).render();
+            new CartPage({ $app }).render();
         }
     };
     this.route();

@@ -1,12 +1,13 @@
-export default function ProductDetailPage({ $target, productId }) {
+export default function ProductDetailPage({ $app, productId }) {
     this.state = {
         productId,
     };
-    const $page = document.createElement("div");
-    $page.className = "ProductDetail";
-    $page.innerHTML = `<h1>상품 정보</h1>`;
+    this.$target = document.createElement("div");
+
+    this.$target.className = "ProductDetail";
+    this.$target.innerHTML = `<h1>상품 정보</h1>`;
 
     this.render = () => {
-        $target.appendChild($page);
+        $app.appendChild(this.$target);
     };
 }
